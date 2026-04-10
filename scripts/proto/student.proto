@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "../grpc/student";
+
+package student;
+
+message GetStudentRequest {
+  int32 id = 1;
+}
+
+message GetStudentResponse {
+  int32 id = 1;
+}
+
+service Student {
+  rpc GetStudent (GetStudentRequest) returns (GetStudentResponse);
+}
