@@ -6,6 +6,8 @@ import (
 	"google.golang.org/grpc"
 )
 
+// NewStudentGRPCService creates actual gRPC 
+// connection to student gRPC service
 func NewStudentGRPCService(
 	addr string,
 ) (studentGRPCClient.StudentClient, error){
