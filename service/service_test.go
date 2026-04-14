@@ -7,6 +7,7 @@ import (
 
 type serviceProxy struct {
 	svc service.Service
+	svcV1 service.ServiceV1
 }
 
 func newServiceProxy(
@@ -14,7 +15,9 @@ func newServiceProxy(
 	mockStudentClient := student.NewStudentGRPCMock()
 	svc := service.NewService(mockStudentClient)
  
+	svcV1 := service.NewServiceV1()
 	return serviceProxy{
 		svc: svc,
+		svcV1: svcV1,
 	}
 }
